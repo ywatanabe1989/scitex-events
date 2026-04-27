@@ -1,5 +1,16 @@
 # scitex-events
 
+<!-- scitex-badges:start -->
+[![PyPI](https://img.shields.io/pypi/v/scitex-events.svg)](https://pypi.org/project/scitex-events/)
+[![Python](https://img.shields.io/pypi/pyversions/scitex-events.svg)](https://pypi.org/project/scitex-events/)
+[![Tests](https://github.com/ywatanabe1989/scitex-events/actions/workflows/test.yml/badge.svg)](https://github.com/ywatanabe1989/scitex-events/actions/workflows/test.yml)
+[![Install Test](https://github.com/ywatanabe1989/scitex-events/actions/workflows/install-test.yml/badge.svg)](https://github.com/ywatanabe1989/scitex-events/actions/workflows/install-test.yml)
+[![Coverage](https://codecov.io/gh/ywatanabe1989/scitex-events/graph/badge.svg)](https://codecov.io/gh/ywatanabe1989/scitex-events)
+[![Docs](https://readthedocs.org/projects/scitex-events/badge/?version=latest)](https://scitex-events.readthedocs.io/en/latest/)
+[![License: AGPL v3](https://img.shields.io/badge/license-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+<!-- scitex-badges:end -->
+
+
 General-purpose async event bus extracted from the [SciTeX](https://github.com/ywatanabe1989/scitex-python) ecosystem as a standalone, zero-dep package.
 
 ## Install
