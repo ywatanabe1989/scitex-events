@@ -16,8 +16,15 @@ Usage
 {"type": "test_complete", "project": "figrecipe", ...}
 """
 
-__version__ = "0.1.0"
-
+try:
+    from importlib.metadata import version as _v, PackageNotFoundError
+    try:
+        __version__ = _v("scitex-events")
+    except PackageNotFoundError:
+        __version__ = "0.0.0+local"
+    del _v, PackageNotFoundError
+except ImportError:  # pragma: no cover — only on ancient Pythons
+    __version__ = "0.0.0+local"
 from ._emit import emit, history, latest
 from ._schema import Event
 from ._types import get_type_info, list_types
