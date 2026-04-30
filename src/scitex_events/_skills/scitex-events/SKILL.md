@@ -103,5 +103,3 @@ Rotation/cleanup is the consumer's responsibility — read and trim.
   triggered by events
 - General skill `01_arch_06_local-state-directories.md` — the canonical
   `<scitex_dir>/<pkg-short>/runtime/` layout
-
-<!-- EOF -->
