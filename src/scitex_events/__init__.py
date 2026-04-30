@@ -16,6 +16,8 @@ Usage
 {"type": "test_complete", "project": "figrecipe", ...}
 """
 
+from __future__ import annotations
+
 try:
     from importlib.metadata import version as _v, PackageNotFoundError
     try:
@@ -30,6 +32,7 @@ from ._schema import Event
 from ._types import get_type_info, list_types
 
 __all__ = [
+    "__version__",
     "Event",
     "emit",
     "latest",
