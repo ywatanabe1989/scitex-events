@@ -11,6 +11,8 @@ import os
 from pathlib import Path
 from typing import Any
 
+from scitex_config._ecosystem import local_state
+
 from ._schema import Event
 
 _MAX_HISTORY_LINES = 1000
@@ -128,7 +130,7 @@ def history(limit: int = 20) -> list:
 
 def _events_dir() -> Path:
     """Get or create ~/.scitex/events/ directory."""
-    d = Path.home() / ".scitex" / "events"
+    d = local_state.runtime_path("events")
     d.mkdir(parents=True, exist_ok=True)
     return d
 
