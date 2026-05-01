@@ -80,7 +80,9 @@ umbrella package's `scitex.events` import path is preserved via a
 
 ## Part of SciTeX
 
-`scitex-events` is part of [**SciTeX**](https://scitex.ai).
+`scitex-events` is part of [**SciTeX**](https://scitex.ai). Install via
+the umbrella with `pip install scitex[events]` to use as
+`scitex.events` (Python).
 
 >Four Freedoms for Research
 >
