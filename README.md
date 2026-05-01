@@ -44,7 +44,7 @@ list(ev.history(limit=20))     # recent history
 
 ## 1 Interfaces
 
-<details>
+<details open>
 <summary><strong>Python API</strong></summary>
 
 <br>
