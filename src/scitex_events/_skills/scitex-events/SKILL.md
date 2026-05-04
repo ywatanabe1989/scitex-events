@@ -1,6 +1,9 @@
 ---
 name: scitex-events
-description: General-purpose async event bus. Emit typed events (`scitex_events.emit("test_complete", project="...", status="success", payload={...})`) from any CLI/HPC/Python process; events persist as local state files under `<scitex_dir>/events/runtime/` and can be forwarded to a cloud webhook. Read with `latest(type)` or `history(limit=N)`. Schema-introspect with `list_types()` / `get_type_info(name)`. Drop-in replacement for ad-hoc JSON-line append loggers, scattered `print(json.dumps({...}))` status messages, and one-off webhook posts. Use whenever a pipeline step needs to record a structured outcome that another process (dashboard, scheduler, agent) reads later.
+description: |
+  [WHAT] Lightweight in-process event-bus for SciTeX scripts — subscribe/emit with typed payloads, no external broker.
+  [WHEN] Decoupling cross-module signals (progress, lifecycle, error) inside a single Python process.
+  [HOW] `from scitex_events import bus` or `scitex-events --help`.
 primary_interface: python
 interfaces:
   python: 3
@@ -9,7 +12,7 @@ interfaces:
   skills: 2
   hook: 0
   http: 1
-tags: [scitex-events, scitex-package, event-bus, async, telemetry]
+tags: [scitex-events]
 ---
 
 > **Interfaces:** Python ⭐⭐⭐ (primary) · CLI ⭐ · Skills ⭐⭐ · HTTP ⭐
@@ -67,3 +70,10 @@ schema-driven flow.
 - `scitex-orochi` — agent message bus that consumes events
 - `scitex-notification` — slack/email triggered by events
 - General `01_arch_06_local-state-directories.md` — runtime path policy
+
+## Sub-skills
+
+### Core (01–09)
+- [01_installation.md](01_installation.md) — install + import sanity check
+- [02_quick-start.md](02_quick-start.md) — 30-second tour
+- [03_python-api.md](03_python-api.md) — Python API surface
