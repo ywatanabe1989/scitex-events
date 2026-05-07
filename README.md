@@ -32,16 +32,16 @@
 pip install scitex-events
 ```
 
-## Quick Start
+## Architecture
 
-```python
-import scitex_events as ev
-
-ev.emit("test_complete", project="figrecipe", status="success",
-        payload={"exit_code": 0, "module": "stats"})
-
-ev.latest("test_complete")     # most recent event of this type
-list(ev.history(limit=20))     # recent history
+```
+scitex-events/
+├── src/scitex_events/
+│   ├── _emit.py         # write event to JSONL store
+│   ├── _history.py      # latest / history / list_types
+│   ├── _schemas.py      # event-type registry
+│   └── _webhook.py      # optional cloud forwarder
+└── tests/
 ```
 
 ## 1 Interfaces
@@ -73,6 +73,28 @@ Events are stored locally as JSON-Lines files (override path via `SCITEX_EVENTS_
 and can optionally be forwarded to a cloud webhook.
 
 </details>
+
+## Demo
+
+```mermaid
+flowchart LR
+    Producer[ev.emit] --> JSONL[(JSONL store)]
+    JSONL --> Latest[ev.latest]
+    JSONL --> History[ev.history]
+    JSONL -. optional .-> Webhook[Cloud webhook]
+```
+
+## Quick Start
+
+```python
+import scitex_events as ev
+
+ev.emit("test_complete", project="figrecipe", status="success",
+        payload={"exit_code": 0, "module": "stats"})
+
+ev.latest("test_complete")     # most recent event of this type
+list(ev.history(limit=20))     # recent history
+```
 
 ## Status
 
