@@ -9,7 +9,7 @@
 <p align="center"><b>Zero-dep async event bus for the SciTeX ecosystem.</b></p>
 
 <p align="center">
-  <a href="https://scitex-events.readthedocs.io/">Full Documentation</a> · <code>pip install scitex-events</code>
+  <a href="https://scitex-events.readthedocs.io/">Full Documentation</a> · <code>uv pip install scitex-events[all]</code>
 </p>
 
 <!-- scitex-badges:start -->
