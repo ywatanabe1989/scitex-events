@@ -8,13 +8,23 @@ dist/
 .pytest_cache/
 .ruff_cache/
 .coverage
+.coverage.*
 htmlcov/
 .tox/
 .mypy_cache/
 .python-version
 .venv/
+.venv-agent/
 venv/
 docs/sphinx/_build/
 docs/sphinx/api/
 *.swp
 .DS_Store
+
+# Local-state directories (per 01_ecosystem_06_local-state-directories).
+# Everything under .scitex/ is ignored except the tracked
+# `.scitex/dev/config.yaml` audit whitelist file.
+.scitex/*
+!.scitex/dev/
+.scitex/dev/*
+!.scitex/dev/config.yaml

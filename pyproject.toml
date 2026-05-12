@@ -33,8 +33,13 @@ dependencies = [
 dev = [
     "pytest",
     "pytest-cov",
+    # CI install step uses pytest-timeout (see .github/workflows/test.yml);
+    # pin it here so local dev mirrors CI behaviour.
+    "pytest-timeout",
     "ruff",
-    "scitex-dev>=0.11.7",
+    # cli-audit pulls click + pyyaml so `scitex-dev ecosystem audit-all`
+    # works locally and tests/develop/test_audit.py runs (not skips).
+    "scitex-dev[cli-audit]>=0.11.7",
 ]
 docs = [
     "sphinx>=7.0",
@@ -64,6 +69,11 @@ scitex-events = "scitex_events"
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = ["--disable-warnings"]
+
+[tool.coverage.run]
+parallel = true
+source = ["scitex_events"]
+concurrency = ["multiprocessing", "thread"]
 
 [tool.ruff]
 target-version = "py39"

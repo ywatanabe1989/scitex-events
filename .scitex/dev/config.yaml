@@ -1,0 +1,13 @@
+# scitex-dev local config (tracked).
+#
+# Used by `scitex-dev ecosystem audit-project` to widen the root
+# whitelist for files that the default PS-103 rule would flag.
+# Keep entries explicit — every line that lands here documents a
+# deliberate top-level file.
+
+audit:
+  root-whitelist:
+    files:
+      # Codecov config lives at repo root per the canonical SciTeX
+      # CI/Codecov skill (02_package_11_ci-and-codecov.md).
+      - codecov.yml
