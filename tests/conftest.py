@@ -17,6 +17,8 @@ import os
 import sysconfig
 from pathlib import Path
 
+import pytest
+
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 # Pin coverage's data file at the repo root and point process_startup
@@ -47,3 +49,28 @@ def _ensure_subprocess_coverage_shim() -> None:
 
 
 _ensure_subprocess_coverage_shim()
+
+
+@pytest.fixture
+def env_save_restore():
+    """Snapshot and restore ``os.environ`` mutations across a test.
+
+    Replacement for the banned ``monkeypatch`` fixture (PA-306). Yields
+    a callable that sets an env var; on teardown, every variable the
+    fixture set is removed and any pre-existing value is restored.
+    """
+    saved: dict[str, str | None] = {}
+
+    def _setenv(key: str, value: str) -> None:
+        if key not in saved:
+            saved[key] = os.environ.get(key)
+        os.environ[key] = value
+
+    try:
+        yield _setenv
+    finally:
+        for key, prev in saved.items():
+            if prev is None:
+                os.environ.pop(key, None)
+            else:
+                os.environ[key] = prev
