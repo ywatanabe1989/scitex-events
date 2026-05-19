@@ -1,6 +1,0 @@
-﻿scitex\_events
-==============
-
-.. automodule:: scitex_events
-
-   
