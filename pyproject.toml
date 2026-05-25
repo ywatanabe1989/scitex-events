@@ -61,7 +61,7 @@ Documentation = "https://scitex-events.readthedocs.io"
 where = ["src"]
 
 [tool.setuptools.package-data]
-scitex_events = ["_skills/**/*.md"]
+scitex_events = ["_skills/**/*.md", "_sphinx_html/**"]
 
 [project.entry-points."scitex_dev.skills"]
 scitex-events = "scitex_events"
