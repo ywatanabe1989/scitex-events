@@ -49,22 +49,6 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">API</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#scitex_events.Event"><code class="docutils literal notranslate"><span class="pre">Event</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#scitex_events.Event.type"><code class="docutils literal notranslate"><span class="pre">Event.type</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#scitex_events.Event.project"><code class="docutils literal notranslate"><span class="pre">Event.project</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#scitex_events.Event.status"><code class="docutils literal notranslate"><span class="pre">Event.status</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#scitex_events.Event.payload"><code class="docutils literal notranslate"><span class="pre">Event.payload</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#scitex_events.Event.source"><code class="docutils literal notranslate"><span class="pre">Event.source</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#scitex_events.Event.timestamp"><code class="docutils literal notranslate"><span class="pre">Event.timestamp</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#scitex_events.Event.to_dict"><code class="docutils literal notranslate"><span class="pre">Event.to_dict()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#scitex_events.Event.from_dict"><code class="docutils literal notranslate"><span class="pre">Event.from_dict()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#scitex_events.emit"><code class="docutils literal notranslate"><span class="pre">emit()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#scitex_events.latest"><code class="docutils literal notranslate"><span class="pre">latest()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#scitex_events.history"><code class="docutils literal notranslate"><span class="pre">history()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#scitex_events.list_types"><code class="docutils literal notranslate"><span class="pre">list_types()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#scitex_events.get_type_info"><code class="docutils literal notranslate"><span class="pre">get_type_info()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -96,8 +80,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-scitex_events">
-<span id="api"></span><h1>API<a class="headerlink" href="#module-scitex_events" title="Link to this heading"></a></h1>
+  <section id="api">
+<h1>API<a class="headerlink" href="#api" title="Link to this heading"></a></h1>
 <p>scitex-events — general-purpose async event bus (standalone).</p>
 <p>Emit events from CLI, HPC, or any process. Events are stored locally
 as state files and optionally forwarded to the cloud API via webhook.</p>
@@ -112,8 +96,8 @@ as state files and optionally forwarded to the cloud API via webhook.</p>
 </div>
 </section>
 <dl class="py class">
-<dt class="sig sig-object py" id="scitex_events.Event">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">scitex_events.</span></span><span class="sig-name descname"><span class="pre">Event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'success'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'local'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scitex_events/_schema.html#Event"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scitex_events.Event" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">scitex_events.</span></span><span class="sig-name descname"><span class="pre">Event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'success'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'local'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scitex_events/_schema.html#Event"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>A single event in the SciTeX event bus.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -128,38 +112,38 @@ as state files and optionally forwarded to the cloud API via webhook.</p>
 </dd>
 </dl>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="scitex_events.Event.type">
-<span class="sig-name descname"><span class="pre">type</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><a class="headerlink" href="#scitex_events.Event.type" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">type</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="scitex_events.Event.project">
-<span class="sig-name descname"><span class="pre">project</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><a class="headerlink" href="#scitex_events.Event.project" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">project</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="scitex_events.Event.status">
-<span class="sig-name descname"><span class="pre">status</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'success'</span></span><a class="headerlink" href="#scitex_events.Event.status" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">status</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'success'</span></span></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="scitex_events.Event.payload">
-<span class="sig-name descname"><span class="pre">payload</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#scitex_events.Event.payload" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">payload</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="scitex_events.Event.source">
-<span class="sig-name descname"><span class="pre">source</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'local'</span></span><a class="headerlink" href="#scitex_events.Event.source" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">source</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'local'</span></span></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="scitex_events.Event.timestamp">
-<span class="sig-name descname"><span class="pre">timestamp</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></span><a class="headerlink" href="#scitex_events.Event.timestamp" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">timestamp</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></span></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="scitex_events.Event.to_dict">
-<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/scitex_events/_schema.html#Event.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scitex_events.Event.to_dict" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/scitex_events/_schema.html#Event.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Convert to JSON-serializable dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -169,8 +153,8 @@ as state files and optionally forwarded to the cloud API via webhook.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="scitex_events.Event.from_dict">
-<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scitex_events/_schema.html#Event.from_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scitex_events.Event.from_dict" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scitex_events/_schema.html#Event.from_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Create Event from dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -182,8 +166,8 @@ as state files and optionally forwarded to the cloud API via webhook.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="scitex_events.emit">
-<span class="sig-prename descclassname"><span class="pre">scitex_events.</span></span><span class="sig-name descname"><span class="pre">emit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'success'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'local'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scitex_events/_emit.html#emit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scitex_events.emit" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">scitex_events.</span></span><span class="sig-name descname"><span class="pre">emit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'success'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'local'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scitex_events/_emit.html#emit"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Emit an event to state file and optional webhook.</p>
 <p>Always writes to ~/.scitex/events/{type}_latest.json.
 Also appends to ~/.scitex/events/history.jsonl.
@@ -208,8 +192,8 @@ If SCITEX_API_KEY is set, POSTs to the cloud API (best-effort).</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="scitex_events.latest">
-<span class="sig-prename descclassname"><span class="pre">scitex_events.</span></span><span class="sig-name descname"><span class="pre">latest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scitex_events/_emit.html#latest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scitex_events.latest" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">scitex_events.</span></span><span class="sig-name descname"><span class="pre">latest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scitex_events/_emit.html#latest"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Read the latest event from state files.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -226,8 +210,8 @@ If None, read the most recent event across all types.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="scitex_events.history">
-<span class="sig-prename descclassname"><span class="pre">scitex_events.</span></span><span class="sig-name descname"><span class="pre">history</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scitex_events/_emit.html#history"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scitex_events.history" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">scitex_events.</span></span><span class="sig-name descname"><span class="pre">history</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scitex_events/_emit.html#history"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Read recent events from history file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -243,8 +227,8 @@ If None, read the most recent event across all types.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="scitex_events.list_types">
-<span class="sig-prename descclassname"><span class="pre">scitex_events.</span></span><span class="sig-name descname"><span class="pre">list_types</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/scitex_events/_types.html#list_types"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scitex_events.list_types" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">scitex_events.</span></span><span class="sig-name descname"><span class="pre">list_types</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/scitex_events/_types.html#list_types"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Return list of known event type names.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -254,8 +238,8 @@ If None, read the most recent event across all types.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="scitex_events.get_type_info">
-<span class="sig-prename descclassname"><span class="pre">scitex_events.</span></span><span class="sig-name descname"><span class="pre">get_type_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scitex_events/_types.html#get_type_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scitex_events.get_type_info" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">scitex_events.</span></span><span class="sig-name descname"><span class="pre">get_type_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scitex_events/_types.html#get_type_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Return metadata for an event type, or empty dict if unknown.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
