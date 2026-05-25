@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "scitex-events"
-version = "0.1.5"
+version = "0.1.6"
 description = "General-purpose async event bus (file-backed, JSON Lines) — standalone module from the SciTeX ecosystem"
 readme = "README.md"
 license = "AGPL-3.0-only"
@@ -61,7 +61,7 @@ Documentation = "https://scitex-events.readthedocs.io"
 where = ["src"]
 
 [tool.setuptools.package-data]
-scitex_events = ["_skills/**/*.md"]
+scitex_events = ["_skills/**/*.md", "_sphinx_html/**"]
 
 [project.entry-points."scitex_dev.skills"]
 scitex-events = "scitex_events"
