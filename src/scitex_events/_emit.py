@@ -15,7 +15,7 @@ from scitex_config._ecosystem import local_state
 
 from ._schema import Event
 
-_MAX_HISTORY_LINES = 1000
+_MAX_HISTORY_LINES = 1_000
 _DEFAULT_API_URL = "https://scitex.ai/api/events/"
 
 
