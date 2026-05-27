@@ -36,10 +36,10 @@ pip install scitex-events
 ```
 scitex-events/
 ├── src/scitex_events/
-│   ├── _emit.py         # write event to JSONL store
-│   ├── _history.py      # latest / history / list_types
-│   ├── _schemas.py      # event-type registry
-│   └── _webhook.py      # optional cloud forwarder
+│   ├── __init__.py      # public API: emit, latest, history, list_types, get_type_info
+│   ├── _emit.py         # event emission, state files, optional webhook delivery
+│   ├── _schema.py       # Event dataclass (type, project, status, payload, source, timestamp)
+│   └── _types.py        # event-type registry
 └── tests/
 ```
 
@@ -68,8 +68,9 @@ ev.list_types()
 ev.get_type_info("test_complete")
 ```
 
-Events are stored locally as JSON-Lines files (override path via `SCITEX_EVENTS_DIR`)
-and can optionally be forwarded to a cloud webhook.
+Events are stored locally as JSON-Lines files under `~/.scitex/events/runtime/`
+(resolved via `local_state.runtime_path("events")`) and can optionally be forwarded
+to a cloud webhook.
 
 </details>
 
@@ -97,9 +98,11 @@ list(ev.history(limit=20))     # recent history
 
 ## Status
 
-Standalone fork of `scitex.events`. Pure stdlib — zero runtime deps. The
-umbrella package's `scitex.events` import path is preserved via a
-`sys.modules`-alias bridge so existing code continues to work.
+Standalone fork of `scitex.events`. Pure stdlib — zero runtime deps except
+`scitex-config` (canonical local-state directory resolver per the SciTeX
+local-state directories skill). The umbrella package's `scitex.events` import
+path is preserved via a `sys.modules`-alias bridge so existing code continues
+to work.
 
 ## Part of SciTeX
 

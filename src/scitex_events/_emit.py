@@ -28,8 +28,8 @@ def emit(
 ) -> Event:
     """Emit an event to state file and optional webhook.
 
-    Always writes to ~/.scitex/events/{type}_latest.json.
-    Also appends to ~/.scitex/events/history.jsonl.
+    Always writes to ~/.scitex/events/runtime/{type}_latest.json.
+    Also appends to ~/.scitex/events/runtime/history.jsonl.
     If SCITEX_API_KEY is set, POSTs to the cloud API (best-effort).
 
     Parameters
@@ -129,7 +129,7 @@ def history(limit: int = 20) -> list:
 
 
 def _events_dir() -> Path:
-    """Get or create ~/.scitex/events/ directory."""
+    """Get runtime events directory (resolved via local_state.runtime_path)."""
     d = local_state.runtime_path("events")
     d.mkdir(parents=True, exist_ok=True)
     return d
